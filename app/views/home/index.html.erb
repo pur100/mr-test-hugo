@@ -1,0 +1,98 @@
+   <% content_for :javascript do %>
+  <script type="text/javascript">
+  ShopifyApp.ready(function() {
+    ShopifyApp.Bar.initialize({ title: "Home" });
+  });
+  </script>
+  <% end %>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="description">
+        <h1>Name of the APP</h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla itaque facilis quasi provident explicabo perferendis non repellendus blanditiis expedita cumque voluptatem maiores voluptas veritatis odio, sunt necessitatibus perspiciatis molestias totam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus cumque ab distinctio, veritatis fugit, impedit animi. Officia illo, quos excepturi, sunt, odit a amet ex perferendis harum dicta consequuntur nulla.</p>
+        <p></p>
+      </div>
+
+
+      <% if !@plan.nil? %>
+        <p>Your current plan is
+          <%= @plan.name %>
+        </p>
+      <% end %>
+      <br>
+      </div>
+      <hr><br>
+      <!-- If you have already an event go see your Calendar page -->
+      <div class="row plan_cards">
+
+          <div class="col-md-4">
+            <%= link_to create_free_plan_recurring_application_charge_path do %>
+            <div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+              <div class="Polaris-Card">
+                <div class="Polaris-Card__Header">
+                  <h2 class="Polaris-Heading">LET'S TRY - FREEMIUM</h2>
+                  <h5>Have some stuff for free</h5>
+                </div>
+                <div class="Polaris-Card__Section">
+                  <ul style="text-align: left">
+                    <li>2 Things</li>
+                    <li>3 other things</li>
+                    <li>great support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="col-md-4">
+            <%= link_to create_silver_plan_recurring_application_charge_path do %>
+            <div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+              <div class="Polaris-Card">
+                <div class="Polaris-Card__Header">
+                  <h2 class="Polaris-Heading">LET'S TRY - Silver</h2>
+                  <h5>7 days trial, Stop when you want</h5>
+                </div>
+                <div class="Polaris-Card__Section">
+                  <ul style="text-align: left">
+                    <li>10 Things</li>
+                    <li>unlimited other things</li>
+                    <li>great support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="col-md-4">
+            <%= link_to create_gold_plan_recurring_application_charge_path do %>
+            <div style="--top-bar-background:#00848e; --top-bar-color:#f9fafb; --top-bar-background-lighter:#1d9ba4;">
+              <div class="Polaris-Card">
+                <div class="Polaris-Card__Header">
+                  <h2 class="Polaris-Heading">LET'S TRY - GOLD</h2>
+                  <h5>7 days trial, Stop when you want</h5>
+                </div>
+                <div class="Polaris-Card__Section">
+                  <ul style="text-align: left">
+                    <li>unlimited things</li>
+                    <li>unlimited other things</li>
+                    <li>great support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
+      </div>
+
+  </div>
+
+
+
+
+
+

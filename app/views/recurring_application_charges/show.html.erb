@@ -1,0 +1,79 @@
+  <script type="text/javascript">
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({
+        title: "Recurring Charge",
+        icon: "<%#= asset_path('favicon.png') %>"
+      });
+    });
+  </script>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+
+  <%# if @recurring_application_charge.present? && !@recurring_application_charge.try(:capped_amount) %>
+    <div class="section">
+      <div class= "col-md-3">
+        <h4>
+          Recurring Charge
+        </h4>
+
+        <p>
+          Here you can see the terms of the recurring charge.
+        </p>
+      </div>
+
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Trial Days</th>
+                  <th>Billing On</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <%= @recurring_application_charge.name %>
+                  </td>
+                  <td>
+                    <%= @recurring_application_charge.price %>
+                  </td>
+                  <td>
+                    <%= @recurring_application_charge.trial_days %>
+                  </td>
+                  <td>
+                    <%= @recurring_application_charge.billing_on %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <p>Si j'ai le free paln je peux upgrader to silver and gold + description</p>
+    <p>Si j'ai le silver plan je peux upgrader to gold</p>
+    <p>si j'ai le gold je peux desinstaller l'app</p>
+    <div class="section">
+      <div class= "col-md-3">
+      </div>
+      <div class="col-md-9">
+        <p>
+          <%= link_to 'Cancel charge', recurring_application_charge_path, method: :delete, class: "btn btn-danger" %>
+        </p>
+      </div>
+    </div>
+
+  <%# else %>
+
+  <%# end %>
+
+

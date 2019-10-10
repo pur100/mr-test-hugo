@@ -1,0 +1,19 @@
+.Polaris-Pagination {
+  margin: 1.6rem 2rem !important;
+}
+
+.plan_cards {
+  a {
+    color: black;
+    .Polaris-Card {
+      transition: all 1s;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+    .Polaris-Card {
+      background: lightgrey;
+      transition: all 1s;
+    }
+  }
+}
